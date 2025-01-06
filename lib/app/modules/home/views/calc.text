@@ -1,0 +1,6 @@
+total = 1600
+row = 1600 - (8*2)
+widget = 1600 / 4 = 400
+padding = 16
+widget = 4
+padding / widget = 16 / 4 = 4
