@@ -62,23 +62,23 @@ class DynamicListViewView extends GetView<DynamicListViewController> {
           const SizedBox(
             height: 60,
           ),
-          SizedBox(
-            height: 500,
-            child: ListView.separated(
-              padding: const EdgeInsets.all(8),
-              itemCount: listOfColor.length,
-              itemBuilder: (BuildContext context, int index) {
-                return Items(
-                  color: listOfColor[index],
-                  entry: "Entry A",
-                );
-              },
-              separatorBuilder: (BuildContext context, int index) {
-                return const SizedBox(
-                  height: 10,
-                );
-              },
-            ),
+          ListView.separated(
+            shrinkWrap: true, /// Give the list exact space
+            physics: const NeverScrollableScrollPhysics(), /// Disable the scrolling
+            padding: const EdgeInsets.all(8),
+            itemCount: listOfColor.length,
+            itemBuilder: (BuildContext context, int index) {
+              return Items(
+                color: listOfColor[index],
+                entry: "Entry A",
+              );
+            },
+            separatorBuilder: (BuildContext context, int index) {
+              return const SizedBox(
+                height: 20,
+                child: Text("any"),
+              );
+            },
           ),
         ],
       ),
